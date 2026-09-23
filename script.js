@@ -1,8 +1,8 @@
 const root = document.documentElement;
 const themeButton = document.querySelector('.theme-button');
 const searchInput = document.querySelector('#search');
-const filters = [...document.querySelectorAll('.filter')];
 const cards = [...document.querySelectorAll('.post-card')];
+const studyLanes = [...document.querySelectorAll('[data-study-lane]')];
 const emptyState = document.querySelector('.empty-state');
 
 const savedTheme = localStorage.getItem('study-blog-theme');
@@ -24,30 +24,22 @@ themeButton.addEventListener('click', () => {
   updateThemeLabel();
 });
 
-let activeFilter = 'all';
-
 function filterPosts() {
   const query = searchInput.value.trim().toLocaleLowerCase('ko');
   let visibleCount = 0;
 
   cards.forEach((card) => {
-    const matchesCategory = activeFilter === 'all' || card.dataset.category === activeFilter;
     const matchesSearch = !query || card.dataset.search.toLocaleLowerCase('ko').includes(query) || card.textContent.toLocaleLowerCase('ko').includes(query);
-    const isVisible = matchesCategory && matchesSearch;
-    card.hidden = !isVisible;
-    if (isVisible) visibleCount += 1;
+    card.hidden = !matchesSearch;
+    if (matchesSearch) visibleCount += 1;
+  });
+
+  studyLanes.forEach((lane) => {
+    lane.hidden = !lane.querySelector('.post-card:not([hidden])');
   });
 
   emptyState.hidden = visibleCount > 0;
 }
-
-filters.forEach((button) => {
-  button.addEventListener('click', () => {
-    activeFilter = button.dataset.filter;
-    filters.forEach((filter) => filter.classList.toggle('active', filter === button));
-    filterPosts();
-  });
-});
 
 searchInput.addEventListener('input', filterPosts);
 document.querySelector('#year').textContent = new Date().getFullYear();

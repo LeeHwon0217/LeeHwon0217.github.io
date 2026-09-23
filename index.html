@@ -25,7 +25,7 @@
       </a>
       <nav class="main-nav" aria-label="주요 메뉴">
         <a class="active" href="#notes">기록</a>
-        <a href="#topics">주제</a>
+        <a href="#topics">로드맵</a>
         <a href="#about">소개</a>
       </nav>
       <button class="theme-button" type="button" aria-label="어두운 화면으로 전환" title="테마 전환">
@@ -62,7 +62,7 @@
         <div class="section-heading">
           <div>
             <p class="section-number">01 — NOTES</p>
-            <h2>최근 공부 기록</h2>
+            <h2>나의 공부 로드맵</h2>
           </div>
           <label class="search-box">
             <span class="sr-only">기록 검색</span>
@@ -71,56 +71,82 @@
           </label>
         </div>
 
-        <div class="filter-list" id="topics" role="group" aria-label="주제 필터">
-          <button class="filter active" type="button" data-filter="all">전체</button>
-          <button class="filter" type="button" data-filter="javascript">JavaScript</button>
-          <button class="filter" type="button" data-filter="algorithm">알고리즘</button>
-          <button class="filter" type="button" data-filter="cs">CS</button>
-          <button class="filter" type="button" data-filter="log">회고</button>
-        </div>
+        <div class="study-board" id="topics">
+          <section class="study-lane next-lane" data-study-lane>
+            <header class="lane-heading">
+              <div><span class="status-dot"></span><h3>다음 공부</h3></div>
+              <span class="lane-count">2</span>
+            </header>
+            <p class="lane-description">호기심을 다음 행동으로 옮길 주제</p>
 
-        <div class="post-grid" id="post-grid">
-          <article class="post-card featured" data-category="javascript" data-search="클로저 자바스크립트 렉시컬 스코프">
-            <div class="post-meta"><span class="category coral">JavaScript</span><time datetime="2026-09-18">2026. 09. 18</time></div>
-            <h3><a href="#">클로저를 이해하는 가장 단단한 방법</a></h3>
-            <p>함수가 만들어질 때의 환경을 기억한다는 말은 정확히 무엇일까? 렉시컬 스코프부터 차근차근 따라가 봤다.</p>
-            <div class="post-footer"><span>8분 읽기</span><span class="arrow">↗</span></div>
-          </article>
+            <article class="post-card" data-search="클로드 claude ai 인공지능 ppt 피피티 발표 자료 티 안 나게 만들기">
+              <div class="post-meta"><span class="category violet">AI · PPT</span><span>01</span></div>
+              <h3>클로드 AI 티 안 나게 PPT 만들기</h3>
+              <p>AI 특유의 표현과 구성을 덜어내고, 사람이 직접 설계한 듯 자연스러운 발표 자료를 만드는 방법.</p>
+              <div class="post-footer"><span>공부 예정</span><span class="arrow">→</span></div>
+            </article>
 
-          <article class="post-card" data-category="algorithm" data-search="그래프 탐색 bfs dfs 알고리즘">
-            <div class="post-meta"><span class="category blue">알고리즘</span><time datetime="2026-09-12">2026. 09. 12</time></div>
-            <h3><a href="#">BFS와 DFS, 언제 무엇을 써야 할까</a></h3>
-            <p>두 탐색 알고리즘의 동작 방식을 시각적으로 비교하고 문제 유형별 선택 기준을 정리했다.</p>
-            <div class="post-footer"><span>6분 읽기</span><span class="arrow">↗</span></div>
-          </article>
+            <article class="post-card" data-search="클로드 claude ai 인공지능 웹 페이지 사이트 티 안 나게 만들기">
+              <div class="post-meta"><span class="category coral">AI · WEB</span><span>02</span></div>
+              <h3>클로드 AI 티 안 나게 페이지 만들기</h3>
+              <p>흔한 AI 디자인 패턴을 피하면서 개성과 완성도가 느껴지는 웹페이지를 만드는 방법.</p>
+              <div class="post-footer"><span>공부 예정</span><span class="arrow">→</span></div>
+            </article>
+          </section>
 
-          <article class="post-card" data-category="cs" data-search="운영체제 프로세스 스레드 cs">
-            <div class="post-meta"><span class="category green">CS</span><time datetime="2026-09-05">2026. 09. 05</time></div>
-            <h3><a href="#">프로세스와 스레드, 그림으로 정리하기</a></h3>
-            <p>메모리 구조와 컨텍스트 스위칭을 중심으로 둘의 차이를 한 장에 담아보았다.</p>
-            <div class="post-footer"><span>5분 읽기</span><span class="arrow">↗</span></div>
-          </article>
+          <section class="study-lane current-lane" data-study-lane>
+            <header class="lane-heading">
+              <div><span class="status-dot"></span><h3>지금 공부 중</h3></div>
+              <span class="lane-count">2</span>
+            </header>
+            <p class="lane-description">현재 깊이 파고들고 있는 주제</p>
 
-          <article class="post-card" data-category="log" data-search="회고 사이드 프로젝트 배운 점">
-            <div class="post-meta"><span class="category yellow">회고</span><time datetime="2026-08-29">2026. 08. 29</time></div>
-            <h3><a href="#">작은 사이드 프로젝트를 끝내며 배운 것</a></h3>
-            <p>완벽하게 시작하려는 마음을 내려놓고, 작게 만들고 자주 고친 한 달의 기록.</p>
-            <div class="post-footer"><span>4분 읽기</span><span class="arrow">↗</span></div>
-          </article>
+            <article class="post-card" data-search="클로저 자바스크립트 렉시컬 스코프">
+              <div class="post-meta"><span class="category coral">JavaScript</span><span>진행 중</span></div>
+              <h3>클로저를 이해하는 가장 단단한 방법</h3>
+              <p>렉시컬 스코프부터 시작해 함수가 환경을 기억하는 원리를 정리하고 있다.</p>
+              <div class="progress" aria-label="진행률 70%"><span style="width: 70%"></span></div>
+            </article>
 
-          <article class="post-card" data-category="javascript" data-search="비동기 이벤트 루프 promise 자바스크립트">
-            <div class="post-meta"><span class="category coral">JavaScript</span><time datetime="2026-08-20">2026. 08. 20</time></div>
-            <h3><a href="#">이벤트 루프를 직접 그려보았다</a></h3>
-            <p>콜 스택, 태스크 큐, 마이크로태스크 큐가 실제로 어떤 순서로 움직이는지 예제로 확인했다.</p>
-            <div class="post-footer"><span>7분 읽기</span><span class="arrow">↗</span></div>
-          </article>
+            <article class="post-card" data-search="비동기 이벤트 루프 promise 자바스크립트">
+              <div class="post-meta"><span class="category yellow">JavaScript</span><span>진행 중</span></div>
+              <h3>이벤트 루프를 직접 그려보기</h3>
+              <p>콜 스택과 태스크 큐가 실제로 어떤 순서로 움직이는지 예제로 확인하고 있다.</p>
+              <div class="progress" aria-label="진행률 45%"><span style="width: 45%"></span></div>
+            </article>
+          </section>
 
-          <article class="post-card" data-category="algorithm" data-search="시간복잡도 빅오 알고리즘">
-            <div class="post-meta"><span class="category blue">알고리즘</span><time datetime="2026-08-14">2026. 08. 14</time></div>
-            <h3><a href="#">Big-O를 숫자로 느껴보기</a></h3>
-            <p>입력 크기가 커질 때 실행 시간이 어떻게 달라지는지 간단한 실험으로 감을 잡았다.</p>
-            <div class="post-footer"><span>5분 읽기</span><span class="arrow">↗</span></div>
-          </article>
+          <section class="study-lane past-lane" data-study-lane>
+            <header class="lane-heading">
+              <div><span class="status-dot"></span><h3>지난 공부</h3></div>
+              <span class="lane-count">4</span>
+            </header>
+            <p class="lane-description">배움을 마치고 기록으로 남긴 주제</p>
+
+            <article class="post-card compact" data-search="그래프 탐색 bfs dfs 알고리즘">
+              <div class="post-meta"><span class="category blue">알고리즘</span><time datetime="2026-09-12">09. 12</time></div>
+              <h3>BFS와 DFS, 언제 무엇을 써야 할까</h3>
+              <div class="post-footer"><span>완료</span><span class="check">✓</span></div>
+            </article>
+
+            <article class="post-card compact" data-search="운영체제 프로세스 스레드 cs">
+              <div class="post-meta"><span class="category green">CS</span><time datetime="2026-09-05">09. 05</time></div>
+              <h3>프로세스와 스레드, 그림으로 정리하기</h3>
+              <div class="post-footer"><span>완료</span><span class="check">✓</span></div>
+            </article>
+
+            <article class="post-card compact" data-search="회고 사이드 프로젝트 배운 점">
+              <div class="post-meta"><span class="category yellow">회고</span><time datetime="2026-08-29">08. 29</time></div>
+              <h3>작은 사이드 프로젝트를 끝내며 배운 것</h3>
+              <div class="post-footer"><span>완료</span><span class="check">✓</span></div>
+            </article>
+
+            <article class="post-card compact" data-search="시간복잡도 빅오 알고리즘">
+              <div class="post-meta"><span class="category blue">알고리즘</span><time datetime="2026-08-14">08. 14</time></div>
+              <h3>Big-O를 숫자로 느껴보기</h3>
+              <div class="post-footer"><span>완료</span><span class="check">✓</span></div>
+            </article>
+          </section>
         </div>
         <p class="empty-state" hidden>조건에 맞는 기록이 아직 없습니다.</p>
       </section>
