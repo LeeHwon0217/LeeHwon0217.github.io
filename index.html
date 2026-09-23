@@ -3,201 +3,144 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="배운 것을 오래 기억하기 위해 기록하는 이훤의 공부 블로그" />
-    <meta name="theme-color" content="#f7f5ef" />
-    <title>이훤의 공부 기록</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23163f32'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='36' fill='%23f7f5ef'%3E%E3%85%8E%3C/text%3E%3C/svg%3E" />
+    <meta name="description" content="미래를 해킹하듯 배우고 기록하는 이훤의 사이버 스터디 아카이브" />
+    <meta name="theme-color" content="#05030d" />
+    <title>HWON://STUDY ARCHIVE</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2305030d'/%3E%3Cpath d='M13 13h13v12h12V13h13v38H38V37H26v14H13z' fill='%2300f7ff'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Pretendard:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">본문으로 바로가기</a>
+    <div class="boot-screen" aria-hidden="true">
+      <div class="boot-logo" data-text="HWON_OS">HWON_OS</div>
+      <div class="boot-terminal"><span>INITIALIZING STUDY ARCHIVE</span><i></i></div>
+      <p>NEURAL LINK // ESTABLISHED</p>
+    </div>
+    <canvas id="particle-field" aria-hidden="true"></canvas>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
     <div class="reading-progress" aria-hidden="true"><span></span></div>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="홈으로 이동">
-        <span class="brand-mark">LH</span>
-        <span class="brand-name">이훤의 공부 기록<small>STUDY ARCHIVE</small></span>
+      <a class="brand magnetic" href="#top" aria-label="홈으로 이동">
+        <span class="brand-bracket">[</span><span class="brand-code">LH</span><span class="brand-bracket">]</span>
+        <span class="brand-name">STUDY_ARCHIVE<small>SYS.ONLINE // 2026</small></span>
       </a>
       <nav class="main-nav" aria-label="주요 메뉴">
-        <a class="active" href="#top"><span>01</span> 기록</a>
-        <a href="#notes"><span>02</span> 로드맵</a>
-        <a href="#about"><span>03</span> 소개</a>
+        <a class="active" href="#top"><span>01</span>HOME</a>
+        <a href="#notes"><span>02</span>ROADMAP</a>
+        <a href="#about"><span>03</span>IDENTITY</a>
       </nav>
-      <button class="theme-button" type="button" aria-label="어두운 화면으로 전환" title="테마 전환">
-        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
-        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-      </button>
+      <div class="header-tools">
+        <span class="system-time" aria-label="현재 시간">00:00:00</span>
+        <button class="theme-button magnetic" type="button" aria-label="네온 색상 전환" title="네온 모드 전환">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
-        <div class="hero-copy">
-          <p class="eyebrow"><span>LEARNING JOURNAL</span><span>2026 — VOL. 01</span></p>
-          <h1>배움은 기록될 때,<br /> <em>비로소 내 것이</em><br /> 됩니다.</h1>
-          <p class="hero-description">
-            개발하며 만난 질문과 해결 과정, 새롭게 이해한 개념을<br class="desktop-only" />
-            잊히기 전에 제 언어로 붙잡아 두는 개인 공부 아카이브입니다.
-          </p>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="floating-code code-one" aria-hidden="true">01001000 01010111 01001111 01001110</div>
+        <div class="floating-code code-two" aria-hidden="true">NODE_0217 // SEOUL_KR</div>
+
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="blink-dot"></span> PERSONAL KNOWLEDGE SYSTEM <b>v2.6</b></p>
+          <h1 class="glitch"><span class="glitch-line" data-text="미래를 해킹하듯">미래를 해킹하듯</span><br /><em class="glitch-line" data-text="배우다">배우다</em></h1>
+          <p class="hero-description">질문을 <strong>입력</strong>하고, 시행착오를 <strong>연산</strong>하고,<br class="desktop-only" /> 배운 것을 나만의 언어로 <strong>저장</strong>하는 디지털 공부 아카이브.</p>
           <div class="hero-actions">
-            <a class="primary-link" href="#notes">로드맵 보기 <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="#about">기록하는 사람 <span aria-hidden="true">→</span></a>
+            <a class="cyber-button magnetic" href="#notes"><span>ENTER ROADMAP</span><i>↗</i></a>
+            <a class="terminal-link" href="#about">$ whoami<span class="typing-cursor">_</span></a>
           </div>
         </div>
-        <aside class="focus-panel" aria-label="현재 공부 중인 주제">
-          <div class="focus-panel-top">
-            <span class="live-label"><i></i> CURRENT FOCUS</span>
-            <strong>02</strong>
+
+        <aside class="focus-panel tilt-card reveal" aria-label="현재 공부 중인 주제">
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+          <div class="focus-panel-top"><span class="live-label"><i></i> LIVE_PROCESS</span><span>02 THREADS</span></div>
+          <div class="core-visual" aria-hidden="true">
+            <div class="orbit orbit-a"><i></i></div><div class="orbit orbit-b"><i></i></div>
+            <div class="core"><span>70%</span><small>SYNC</small></div>
           </div>
-          <div class="focus-item">
-            <span>JAVASCRIPT · 70%</span>
-            <h2>클로저를 이해하는<br />가장 단단한 방법</h2>
-            <div class="focus-progress"><span style="width: 70%"></span></div>
+          <div class="focus-data">
+            <div class="focus-item">
+              <div><span>PROC_01</span><b>70%</b></div><h2>클로저를 이해하는<br />가장 단단한 방법</h2>
+              <div class="focus-progress"><span style="--progress: 70%"></span></div>
+            </div>
+            <div class="focus-item secondary">
+              <div><span>PROC_02</span><b>45%</b></div><h2>이벤트 루프를 직접 그려보기</h2>
+              <div class="focus-progress"><span style="--progress: 45%"></span></div>
+            </div>
           </div>
-          <div class="focus-item secondary">
-            <span>JAVASCRIPT · 45%</span>
-            <h2>이벤트 루프를<br />직접 그려보기</h2>
-            <div class="focus-progress"><span style="width: 45%"></span></div>
-          </div>
-          <p class="focus-note">질문 → 탐구 → 기록 → 연결</p>
         </aside>
-        <div class="hero-index" aria-hidden="true">HWON — NOTE 0217</div>
+        <div class="scroll-signal" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i></i></div>
       </section>
 
-      <section class="stats-strip" aria-label="공부 기록 요약">
-        <div><strong>08</strong><span>전체 공부 기록</span></div>
-        <div><strong>02</strong><span>지금 공부 중</span></div>
-        <div><strong>02</strong><span>다음 공부</span></div>
-        <p>꾸준함은 재능을 이긴다.<br /><strong>오늘도 한 칸 앞으로.</strong></p>
+      <div class="data-marquee" aria-hidden="true"><div>LEARN <i>✦</i> BUILD <i>✦</i> DEBUG <i>✦</i> RECORD <i>✦</i> REPEAT <i>✦</i> LEARN <i>✦</i> BUILD <i>✦</i> DEBUG <i>✦</i> RECORD <i>✦</i> REPEAT <i>✦</i></div></div>
+
+      <section class="system-stats" aria-label="공부 기록 요약">
+        <div class="stat reveal"><span>ARCHIVED_DATA</span><strong data-count="8">00</strong><small>RECORDS</small></div>
+        <div class="stat reveal"><span>ACTIVE_PROCESS</span><strong data-count="2">00</strong><small>RUNNING</small></div>
+        <div class="stat reveal"><span>QUEUE_STACK</span><strong data-count="2">00</strong><small>NEXT UP</small></div>
+        <div class="system-message reveal"><span>SYSTEM MESSAGE</span><p>꾸준함은 재능을 이긴다.<br /><b>오늘도 한 칸 앞으로.</b></p></div>
       </section>
 
       <section class="notes-section" id="notes">
-        <div class="section-heading">
-          <div>
-            <p class="section-number">01 / LEARNING MAP</p>
-            <h2>나의 공부 로드맵</h2>
-            <p class="section-intro">배우고 싶은 것부터 이해한 것까지, 지금의 위치를 한눈에 기록합니다.</p>
-          </div>
-          <label class="search-box">
-            <span class="sr-only">기록 검색</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-            <input id="search" type="search" placeholder="기록 검색" autocomplete="off" />
-          </label>
+        <div class="section-heading reveal">
+          <div><p class="section-number">// 01 — LEARNING PIPELINE</p><h2 class="outline-title">STUDY<br /><span>ROADMAP</span></h2><p class="section-intro">QUEUE → PROCESS → ARCHIVE. 배움의 모든 상태를 추적합니다.</p></div>
+          <label class="search-box"><span class="search-prefix">SEARCH://</span><input id="search" type="search" placeholder="KEYWORD 입력" autocomplete="off" /><kbd>⌘ K</kbd></label>
         </div>
 
         <div class="study-board" id="topics">
-          <section class="study-lane next-lane" data-study-lane>
-            <header class="lane-heading">
-              <div><span class="status-dot"></span><h3>다음 공부</h3></div>
-              <span class="lane-count">2</span>
-            </header>
-            <p class="lane-description">호기심을 다음 행동으로 옮길 주제</p>
-
-            <article class="post-card" data-search="클로드 claude ai 인공지능 ppt 피피티 발표 자료 티 안 나게 만들기">
-              <div class="post-meta"><span class="category violet">AI · PPT</span><span>01</span></div>
-              <h3>클로드 AI 티 안 나게 PPT 만들기</h3>
-              <p>AI 특유의 표현과 구성을 덜어내고, 사람이 직접 설계한 듯 자연스러운 발표 자료를 만드는 방법.</p>
-              <div class="post-footer"><span>공부 예정</span><span class="arrow">→</span></div>
+          <section class="study-lane next-lane reveal" data-study-lane>
+            <header class="lane-heading"><div><span class="status-icon">◇</span><div><small>STATUS_01</small><h3>NEXT_QUEUE</h3></div></div><span class="lane-count">02</span></header>
+            <p class="lane-description">다음 실행을 기다리는 학습 데이터</p>
+            <article class="post-card tilt-card" data-search="클로드 claude ai 인공지능 ppt 피피티 발표 자료 티 안 나게 만들기">
+              <span class="card-scan" aria-hidden="true"></span><div class="post-meta"><span class="category violet">AI://PPT</span><span>QUEUE_01</span></div><h3>클로드 AI 티 안 나게 PPT 만들기</h3><p>AI의 흔적을 지우고, 사람이 직접 설계한 듯 자연스러운 발표 자료를 구축한다.</p><div class="post-footer"><span>AWAITING INPUT</span><span class="arrow">↗</span></div>
             </article>
-
-            <article class="post-card" data-search="클로드 claude ai 인공지능 웹 페이지 사이트 티 안 나게 만들기">
-              <div class="post-meta"><span class="category coral">AI · WEB</span><span>02</span></div>
-              <h3>클로드 AI 티 안 나게 페이지 만들기</h3>
-              <p>흔한 AI 디자인 패턴을 피하면서 개성과 완성도가 느껴지는 웹페이지를 만드는 방법.</p>
-              <div class="post-footer"><span>공부 예정</span><span class="arrow">→</span></div>
+            <article class="post-card tilt-card" data-search="클로드 claude ai 인공지능 웹 페이지 사이트 티 안 나게 만들기">
+              <span class="card-scan" aria-hidden="true"></span><div class="post-meta"><span class="category coral">AI://WEB</span><span>QUEUE_02</span></div><h3>클로드 AI 티 안 나게 페이지 만들기</h3><p>예측 가능한 AI 패턴을 벗어나 개성과 완성도가 느껴지는 웹을 구축한다.</p><div class="post-footer"><span>AWAITING INPUT</span><span class="arrow">↗</span></div>
             </article>
           </section>
 
-          <section class="study-lane current-lane" data-study-lane>
-            <header class="lane-heading">
-              <div><span class="status-dot"></span><h3>지금 공부 중</h3></div>
-              <span class="lane-count">2</span>
-            </header>
-            <p class="lane-description">현재 깊이 파고들고 있는 주제</p>
-
-            <article class="post-card" data-search="클로저 자바스크립트 렉시컬 스코프">
-              <div class="post-meta"><span class="category coral">JavaScript</span><span>진행 중</span></div>
-              <h3>클로저를 이해하는 가장 단단한 방법</h3>
-              <p>렉시컬 스코프부터 시작해 함수가 환경을 기억하는 원리를 정리하고 있다.</p>
-              <div class="progress" aria-label="진행률 70%"><span style="width: 70%"></span></div>
+          <section class="study-lane current-lane reveal" data-study-lane>
+            <header class="lane-heading"><div><span class="status-icon pulse-icon">◉</span><div><small>STATUS_02</small><h3>IN_PROCESS</h3></div></div><span class="lane-count">02</span></header>
+            <p class="lane-description">신경망에 동기화 중인 활성 데이터</p>
+            <article class="post-card active-card tilt-card" data-search="클로저 자바스크립트 렉시컬 스코프">
+              <span class="card-scan" aria-hidden="true"></span><div class="post-meta"><span class="category cyan">JS://CORE</span><span>RUNNING</span></div><h3>클로저를 이해하는 가장 단단한 방법</h3><p>렉시컬 스코프부터 함수가 환경을 기억하는 원리까지 신경망에 연결 중.</p><div class="progress-label"><span>SYNC PROGRESS</span><b>70%</b></div><div class="progress" aria-label="진행률 70%"><span style="--progress: 70%"></span></div>
             </article>
-
-            <article class="post-card" data-search="비동기 이벤트 루프 promise 자바스크립트">
-              <div class="post-meta"><span class="category yellow">JavaScript</span><span>진행 중</span></div>
-              <h3>이벤트 루프를 직접 그려보기</h3>
-              <p>콜 스택과 태스크 큐가 실제로 어떤 순서로 움직이는지 예제로 확인하고 있다.</p>
-              <div class="progress" aria-label="진행률 45%"><span style="width: 45%"></span></div>
+            <article class="post-card active-card tilt-card" data-search="비동기 이벤트 루프 promise 자바스크립트">
+              <span class="card-scan" aria-hidden="true"></span><div class="post-meta"><span class="category yellow">JS://ASYNC</span><span>RUNNING</span></div><h3>이벤트 루프를 직접 그려보기</h3><p>콜 스택과 태스크 큐가 어떤 순서로 작동하는지 시뮬레이션 중.</p><div class="progress-label"><span>SYNC PROGRESS</span><b>45%</b></div><div class="progress" aria-label="진행률 45%"><span style="--progress: 45%"></span></div>
             </article>
           </section>
 
-          <section class="study-lane past-lane" data-study-lane>
-            <header class="lane-heading">
-              <div><span class="status-dot"></span><h3>지난 공부</h3></div>
-              <span class="lane-count">4</span>
-            </header>
-            <p class="lane-description">배움을 마치고 기록으로 남긴 주제</p>
-
-            <article class="post-card compact" data-search="그래프 탐색 bfs dfs 알고리즘">
-              <div class="post-meta"><span class="category blue">알고리즘</span><time datetime="2026-09-12">09. 12</time></div>
-              <h3>BFS와 DFS, 언제 무엇을 써야 할까</h3>
-              <div class="post-footer"><span>완료</span><span class="check">✓</span></div>
-            </article>
-
-            <article class="post-card compact" data-search="운영체제 프로세스 스레드 cs">
-              <div class="post-meta"><span class="category green">CS</span><time datetime="2026-09-05">09. 05</time></div>
-              <h3>프로세스와 스레드, 그림으로 정리하기</h3>
-              <div class="post-footer"><span>완료</span><span class="check">✓</span></div>
-            </article>
-
-            <article class="post-card compact" data-search="회고 사이드 프로젝트 배운 점">
-              <div class="post-meta"><span class="category yellow">회고</span><time datetime="2026-08-29">08. 29</time></div>
-              <h3>작은 사이드 프로젝트를 끝내며 배운 것</h3>
-              <div class="post-footer"><span>완료</span><span class="check">✓</span></div>
-            </article>
-
-            <article class="post-card compact" data-search="시간복잡도 빅오 알고리즘">
-              <div class="post-meta"><span class="category blue">알고리즘</span><time datetime="2026-08-14">08. 14</time></div>
-              <h3>Big-O를 숫자로 느껴보기</h3>
-              <div class="post-footer"><span>완료</span><span class="check">✓</span></div>
-            </article>
+          <section class="study-lane past-lane reveal" data-study-lane>
+            <header class="lane-heading"><div><span class="status-icon">✓</span><div><small>STATUS_03</small><h3>ARCHIVED</h3></div></div><span class="lane-count">04</span></header>
+            <p class="lane-description">검증을 마치고 영구 저장된 데이터</p>
+            <article class="post-card compact tilt-card" data-search="그래프 탐색 bfs dfs 알고리즘"><span class="card-scan" aria-hidden="true"></span><div class="post-meta"><span class="category blue">ALGORITHM</span><time datetime="2026-09-12">09.12.26</time></div><h3>BFS와 DFS, 언제 무엇을 써야 할까</h3><div class="post-footer"><span>DATA VERIFIED</span><span class="check">✓</span></div></article>
+            <article class="post-card compact tilt-card" data-search="운영체제 프로세스 스레드 cs"><span class="card-scan" aria-hidden="true"></span><div class="post-meta"><span class="category green">COMPUTER_SCI</span><time datetime="2026-09-05">09.05.26</time></div><h3>프로세스와 스레드, 그림으로 정리하기</h3><div class="post-footer"><span>DATA VERIFIED</span><span class="check">✓</span></div></article>
+            <article class="post-card compact tilt-card" data-search="회고 사이드 프로젝트 배운 점"><span class="card-scan" aria-hidden="true"></span><div class="post-meta"><span class="category yellow">RETROSPECT</span><time datetime="2026-08-29">08.29.26</time></div><h3>작은 사이드 프로젝트를 끝내며 배운 것</h3><div class="post-footer"><span>DATA VERIFIED</span><span class="check">✓</span></div></article>
+            <article class="post-card compact tilt-card" data-search="시간복잡도 빅오 알고리즘"><span class="card-scan" aria-hidden="true"></span><div class="post-meta"><span class="category blue">ALGORITHM</span><time datetime="2026-08-14">08.14.26</time></div><h3>Big-O를 숫자로 느껴보기</h3><div class="post-footer"><span>DATA VERIFIED</span><span class="check">✓</span></div></article>
           </section>
         </div>
-        <p class="empty-state" hidden>조건에 맞는 기록이 아직 없습니다.</p>
+        <p class="empty-state" hidden>ERROR 404 // 일치하는 학습 데이터가 없습니다.</p>
       </section>
 
       <section class="about-section" id="about">
-        <p class="section-number">02 / ABOUT THIS ARCHIVE</p>
-        <div class="about-grid">
-          <div class="about-title">
-            <span class="quote-mark">“</span>
-            <h2>아는 것보다,<br />설명할 수 있는 것을<br />늘려갑니다.</h2>
-          </div>
-          <div class="about-copy">
-            <p>안녕하세요, 개발자 <strong>이훤</strong>입니다.<br />모호하게 알던 것을 제 언어로 설명할 수 있을 때까지 공부합니다.</p>
-            <p>이곳에는 정답보다 고민의 과정, 성공보다 시행착오를 솔직하게 남깁니다. 오늘의 기록이 내일의 저와 누군가에게 작은 이정표가 되길 바랍니다.</p>
-            <dl class="about-details">
-              <div><dt>INTEREST</dt><dd>Web · JavaScript · AI</dd></div>
-              <div><dt>METHOD</dt><dd>Learn · Build · Write</dd></div>
-            </dl>
-            <div class="social-links">
-              <a href="https://github.com/LeeHwon0217" target="_blank" rel="noreferrer">GitHub ↗</a>
-              <a href="mailto:hello@example.com">Email ↗</a>
-            </div>
-          </div>
+        <div class="identity-visual reveal" aria-hidden="true"><div class="id-ring ring-one"></div><div class="id-ring ring-two"></div><div class="id-avatar">LH<span>0217</span></div><span class="id-label label-a">HUMAN_ID</span><span class="id-label label-b">SEOUL_NODE</span></div>
+        <div class="about-copy reveal">
+          <p class="section-number">// 02 — USER IDENTITY</p><h2>HELLO,<br />I'M <span>HWON.</span></h2><p class="lead">아는 것보다 <b>설명할 수 있는 것</b>을 늘려가는 개발자입니다.</p><p>모호한 지식을 해체하고, 직접 만들고, 제 언어로 다시 조립합니다. 정답만이 아니라 오류와 디버깅 과정까지 모두 이곳에 기록합니다.</p>
+          <dl class="about-details"><div><dt>INTEREST</dt><dd>WEB / JAVASCRIPT / AI</dd></div><div><dt>PROTOCOL</dt><dd>LEARN → BUILD → WRITE</dd></div><div><dt>STATUS</dt><dd><i></i> ALWAYS LEARNING</dd></div></dl>
+          <div class="social-links"><a class="magnetic" href="https://github.com/LeeHwon0217" target="_blank" rel="noreferrer">GITHUB ↗</a><a class="magnetic" href="mailto:hello@example.com">EMAIL ↗</a></div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Lee Hwon. 배운 만큼 나누기.</p>
-      <a href="#top">맨 위로 ↑</a>
-    </footer>
-
+    <footer class="site-footer"><p>© <span id="year"></span> LEE_HWON // ALL SYSTEMS OPERATIONAL</p><div><span class="footer-status"><i></i> ONLINE</span><a href="#top">BACK_TO_TOP ↑</a></div></footer>
     <script src="script.js"></script>
   </body>
 </html>
